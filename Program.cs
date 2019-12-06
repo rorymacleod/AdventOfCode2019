@@ -10,7 +10,7 @@ namespace AdventOfCode2019
         {
             Console.WriteLine("Hello World!");
 
-            Day01();
+            Day02();
         }
 
         private static void Day01()
@@ -22,6 +22,20 @@ namespace AdventOfCode2019
             long fuel = day.GetFuel(masses);
 
             Console.WriteLine($"Fuel: {fuel}");
+        }
+
+        private static void Day02()
+        {
+            var day = new Day02();
+            var masses = File.ReadAllLines(".\\Data\\Day01.txt")
+                .Select(int.Parse);
+            foreach (var mass in masses)
+            {
+                day.AddMass(mass);
+            }
+
+
+            Console.WriteLine($"Fuel: {day.Fuel}");
         }
     }
 }
